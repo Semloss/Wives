@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WivesApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    @StateObject private var appState = AppState.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            return ContentView()
         }
     }
 }

@@ -3,16 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7514B143266E718F0066EC1A /* SSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7514B142266E718F0066EC1A /* SSMenu.swift */; };
 		754E29F8266CE59B0014B499 /* WivesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E29F7266CE59B0014B499 /* WivesApp.swift */; };
 		754E29FA266CE59B0014B499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E29F9266CE59B0014B499 /* ContentView.swift */; };
 		754E29FC266CE59C0014B499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754E29FB266CE59C0014B499 /* Assets.xcassets */; };
 		754E29FF266CE59C0014B499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754E29FE266CE59C0014B499 /* Preview Assets.xcassets */; };
 		754E2A0B266CE59C0014B499 /* WivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A0A266CE59C0014B499 /* WivesTests.swift */; };
 		754E2A16266CE59C0014B499 /* WivesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A15266CE59C0014B499 /* WivesUITests.swift */; };
+		754E2A24266CED050014B499 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A23266CED050014B499 /* Constants.swift */; };
+		754E2A27266CFEAE0014B499 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 754E2A26266CFEAE0014B499 /* Defaults */; };
+		754E2A29266D064B0014B499 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A28266D064B0014B499 /* AppState.swift */; };
+		754E2A2B266D0B9D0014B499 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A2A266D0B9D0014B499 /* AppActions.swift */; };
+		754E2A2D266D0FF80014B499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E2A2C266D0FF80014B499 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7514B142266E718F0066EC1A /* SSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMenu.swift; sourceTree = "<group>"; };
 		754E29F4266CE59B0014B499 /* Wives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754E29F7266CE59B0014B499 /* WivesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WivesApp.swift; sourceTree = "<group>"; };
 		754E29F9266CE59B0014B499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +53,10 @@
 		754E2A11266CE59C0014B499 /* WivesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WivesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754E2A15266CE59C0014B499 /* WivesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WivesUITests.swift; sourceTree = "<group>"; };
 		754E2A17266CE59C0014B499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		754E2A23266CED050014B499 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		754E2A28266D064B0014B499 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		754E2A2A266D0B9D0014B499 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		754E2A2C266D0FF80014B499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754E2A27266CFEAE0014B499 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				754E29F7266CE59B0014B499 /* WivesApp.swift */,
+				754E2A28266D064B0014B499 /* AppState.swift */,
+				754E2A2C266D0FF80014B499 /* AppDelegate.swift */,
+				754E2A2A266D0B9D0014B499 /* AppActions.swift */,
+				7514B142266E718F0066EC1A /* SSMenu.swift */,
+				754E2A23266CED050014B499 /* Constants.swift */,
 				754E29F9266CE59B0014B499 /* ContentView.swift */,
 				754E29FB266CE59C0014B499 /* Assets.xcassets */,
 				754E2A00266CE59C0014B499 /* Info.plist */,
@@ -148,6 +165,9 @@
 			dependencies = (
 			);
 			name = Wives;
+			packageProductDependencies = (
+				754E2A26266CFEAE0014B499 /* Defaults */,
+			);
 			productName = Wives;
 			productReference = 754E29F4266CE59B0014B499 /* Wives.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +239,9 @@
 				Base,
 			);
 			mainGroup = 754E29EB266CE59B0014B499;
+			packageReferences = (
+				754E2A25266CFEAE0014B499 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = 754E29F5266CE59B0014B499 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,8 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754E2A2D266D0FF80014B499 /* AppDelegate.swift in Sources */,
 				754E29FA266CE59B0014B499 /* ContentView.swift in Sources */,
+				7514B143266E718F0066EC1A /* SSMenu.swift in Sources */,
 				754E29F8266CE59B0014B499 /* WivesApp.swift in Sources */,
+				754E2A24266CED050014B499 /* Constants.swift in Sources */,
+				754E2A29266D064B0014B499 /* AppState.swift in Sources */,
+				754E2A2B266D0B9D0014B499 /* AppActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +613,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		754E2A25266CFEAE0014B499 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		754E2A26266CFEAE0014B499 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 754E2A25266CFEAE0014B499 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 754E29EC266CE59B0014B499 /* Project object */;
 }
