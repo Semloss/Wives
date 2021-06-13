@@ -9,11 +9,16 @@ import SwiftUI
 
 @main
 struct WivesApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    // 这个主要是针对主页面
     @StateObject private var appState = AppState.shared
     var body: some Scene {
         WindowGroup {
-            return ContentView()
+            ContentView()
+                .environmentObject(appState)
+                .frame(minWidth: 1000, idealWidth: 1200, maxWidth: .infinity, minHeight: 600, idealHeight: 800, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }
+        Settings{
+            SettingView()
         }
     }
 }

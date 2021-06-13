@@ -10,64 +10,43 @@ import AppKit
 import Defaults
 
 class AppState: ObservableObject {
-    let shared = AppState()
-    
+    static let shared = AppState()
     // 图片资源list
     var libraryImageList : [NSImage] = []
     // 左边栏的选择状态，以及展示的wording
-    
     var mainStatusIcon = NSImage(named: "MenuBarIcon")
-    
+    // 下载的壁纸图片保存的位置, 其实可以存在default里面
     var libraryImageSavePath = Defaults[.libraryimagesavepath]
     
-    // app相关数据
-    let id = Bundle.main.bundleIdentifier!
-    let name = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String
-    let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-    let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
-    let url = Bundle.main.bundleURL
-    
-    // 主要表示一些状态
-    
-    // 是否第一次加载，从defaults中获取，获取之后就不能修改
-    let isFirstLaunch: Bool = {
-        return Defaults[.isfirstlaunch]
-    }()
-    
-    let mainMenu = SSMenu()
-    
-//    private(set) lazy var statusItem = with(NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)) {
-//        $0.isVisible = true
-//        $0.behavior = [.removalAllowed, .terminationOnRemoval]
-//        $0.menu = menu
-//        $0.button?.image = Constants.menuBarIcon
-//    }
+//     app相关数据
+//    let id = Bundle.main.bundleIdentifier!
+    static let name = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String
+//    let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+//    let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
+//    let url = Bundle.main.bundleURL
 //
-//    private(set) lazy var statusItemButton = statusItem.button!
-    
-    private(set) lazy var mainStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    
+//     主要表示一些状态
+//
 
     
-//    func getLibraryImageSavePath()
-//    {
-//        guard self.libraryImageSavePath != nil else {
-//            self.libraryImageSavePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library", isDirectory: true)
-//            return
-//        }
-//    }
+    let mainMenu = SSMenu()
+    // 设置titlebar的图标以及菜单
+    private(set) lazy var mainStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    // 创建一个引用
+    private(set) lazy var mainStatusItemButton = mainStatusItem.button
     
     // init
     init() {
-        // 初始化一些值
-        //_ = statusItemButton
+        initMainStatusItem()
+        // 加载菜单栏
+        showMenu()
+//        load()
     }
     
     private func load() {
         DispatchQueue.main.async {
-            if self.isFirstLaunch {
-                self.getLibraryImageSavePath()
-            }
+            // 第一步检查是否有文件夹，如果没有，则创建，如果有，则加载
+            // 打开app时候加载图片也可以放在这做
             self.loadImageFromLibrary()
         }
     }
