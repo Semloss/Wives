@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 这里的appstate===Appstate.shared
+    @EnvironmentObject private var appstate: AppState
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            ForEach(AppState.shared.libraryImageList, id: \.self) { item in
+                Image(nsImage: item)
+            }
+        }
     }
 }
 

@@ -18,15 +18,13 @@ class AppState: ObservableObject {
     // 下载的壁纸图片保存的位置, 其实可以存在default里面
     var libraryImageSavePath = Defaults[.libraryimagesavepath]
     
+    static let name = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String
 //     app相关数据
 //    let id = Bundle.main.bundleIdentifier!
-    static let name = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String
 //    let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
 //    let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
 //    let url = Bundle.main.bundleURL
-//
-//     主要表示一些状态
-//
+
 
     
     let mainMenu = SSMenu()
@@ -38,16 +36,17 @@ class AppState: ObservableObject {
     // init
     init() {
         initMainStatusItem()
-        // 加载菜单栏
+        //加载菜单栏
         showMenu()
-//        load()
+        load()
     }
     
     private func load() {
-        DispatchQueue.main.async {
-            // 第一步检查是否有文件夹，如果没有，则创建，如果有，则加载
-            // 打开app时候加载图片也可以放在这做
-            self.loadImageFromLibrary()
-        }
+//        DispatchQueue.main.async {
+//            // 第一步检查是否有文件夹，如果没有，则创建，如果有，则加载
+//            // 打开app时候加载图片也可以放在这做
+//            self.loadImageFromLibrary()
+//        }
+        self.loadImageFromLibrary()
     }
 }

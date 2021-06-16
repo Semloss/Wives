@@ -15,6 +15,19 @@ extension AppState {
         NSApp.terminate(nil)
     }
     
+    func loadImageFromLibrary() {
+        // 检查图片文件夹是否存在
+        checkImageLibraryFloder()
+        // 遍历文件夹加载图片
+        let iterator = FileManager.default.enumerator(atPath: self.libraryImageSavePath!.path)
+        while let elemet = iterator?.nextObject() as? String {
+            // 从本地加载图片到appstate中
+            self.libraryImageList.append(NSImage(byReferencing: self.libraryImageSavePath!.appendingPathComponent(elemet)))
+//            NSLog(String(self.libraryImageList.count))
+        }
+        NSLog("load")
+    }
+    
     // 检查是否有存放图片的文件夹，没有则创建
     func checkImageLibraryFloder() {
         self.getLibraryImageSavePath()
@@ -27,15 +40,10 @@ extension AppState {
         }
     }
     
-    func loadImageFromLibrary() {
-        // 加载图片
-        NSLog("加载图片")
-        checkImageLibraryFloder()
-    }
-    
     func getLibraryImageSavePath() {
         guard self.libraryImageSavePath != nil else {
-            self.libraryImageSavePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library", isDirectory: true)
+            self.libraryImageSavePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Downloads", isDirectory: true)
+                .appendingPathComponent("WivesImage", isDirectory: true)
             return
         }
     }
