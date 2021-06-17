@@ -70,6 +70,16 @@ extension AppState {
         }
     }
     
+//    func ParseNavigationTitle(data: String) {
+//        let decoder = JSONDecoder()
+//        if let data = data.data(using: String.Encoding.utf8) {
+//            do {
+//                self.navigationTitleDict = try decoder.decode(NavigationTitleDict.self, from: data)
+//            } catch  {
+//                fatalError(because: .jsonParseError)
+//            }
+//        }
+//    }
 }
 
 

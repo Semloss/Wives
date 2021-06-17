@@ -13,9 +13,7 @@ import Defaults
 // 这里的一些变量可以作为publisher
 
 extension Defaults.Keys {
+    // 可以使用Defaults.publisher(.libraryimagesavepath) 来动态触发事件给订阅者
     // 比如定义打开软件之后展示的页面
     static let libraryimagesavepath = Key<URL?>("libraryimagesavepath", default: nil)
-    // 可以使用Defaults.publisher(.isonload) 来动态触发事件给订阅者
-    // 这个时候应该是加载库里面保存的内容
-    //static let isonload = Key<Bool>("isonload", default: false)
 }

@@ -13,6 +13,8 @@ class AppState: ObservableObject {
     static let shared = AppState()
     // 图片资源list
     var libraryImageList : [NSImage] = []
+    // 下载的图片资源
+    var downloadImageList: [NSImage] = []
     // 左边栏的选择状态，以及展示的wording
     var mainStatusIcon = NSImage(named: "MenuBarIcon")
     // 下载的壁纸图片保存的位置, 其实可以存在default里面
@@ -42,6 +44,7 @@ class AppState: ObservableObject {
     }
     
     private func load() {
+        //在这里是异步加载，会出现问题
 //        DispatchQueue.main.async {
 //            // 第一步检查是否有文件夹，如果没有，则创建，如果有，则加载
 //            // 打开app时候加载图片也可以放在这做

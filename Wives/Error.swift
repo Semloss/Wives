@@ -23,6 +23,8 @@ public struct FatalReason: CustomStringConvertible {
     /// Die because this functionality should never be called,
     /// typically to silence requirements.
     public static let mustNotBeCalled = Self("Should never be called.")
+    
+    public static let jsonParseError = Self("Json Parse Error.")
 
     /// An underlying string-based cause for a fatal error.
     public let reason: String
